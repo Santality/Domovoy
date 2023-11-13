@@ -1,0 +1,123 @@
+body{
+    background-color: #011A27;
+}
+nav{
+    background-color: #073146;
+}
+.btn-navbar{
+    height: 80px;
+    width: 80px;
+    border: none;
+    background-color: #073146;
+    transition: 0.2s ease-in-out;
+}
+.btn-navbar:hover{
+    background-color: #DBB969;
+}
+.btn-navbar:hover path{
+    transition: 0.2s ease-in-out;
+    fill: #073146;
+}
+.btn-navbar:focus{
+    outline: none;
+}
+.navbar{
+    height: 80px;
+    padding: 0;
+}
+.btn-auth{
+    text-decoration: none;
+    color: #DBB969;
+    font-size: 22px;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out;
+    padding: 5px 15px;
+    background: none;
+    border: none;
+}
+.btn-auth:hover{
+    color: #073146;
+    border-radius: 100px;
+    background-color: #DBB969;
+}
+.btn-auth:focus{
+    outline: none;
+}
+.offcanvas{
+    background-color: #073146;
+}
+.offcanvas-title{
+    color: #DBB969;
+}
+.btn-close-cst{
+    border: none;
+    background-color: #073146;
+}
+.btn-close-cst:hover path{
+    stroke: #073146;
+}
+.btn-close-cst:hover circle{
+    fill: #DBB969;
+}
+.nav-link{
+    color: #DBB969;
+    font-size: 20px;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: #b88a1f;
+}
+.main-text{
+    width: 665px;
+    margin-top: 250px;
+    margin-left: 80px;
+    font-size: 128px;
+    color: #DBB969;
+}
+.main-second-text{
+    font-size: 24px;
+    margin-left: 80px;
+    text-align: center;
+    width: 665px;
+    color: white;
+    margin-bottom: 20px;
+}
+.main-block-text{
+    display: flex;
+    width: 100%;
+    background-color: #073146;
+    border-radius: 100px;
+    position: relative;
+}
+.main-block-text p{
+    color: white;
+}
+.main-block-text-desc{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+}
+.main-block-text-desc p{
+    font-size: 20px;
+    margin: 0;
+    line-height: 96%;
+}
+.main-block-text-desc img{
+    margin-right: 10px;
+    margin-left: 60px;
+}
+.main-block-big-logo{
+    position: absolute;
+    bottom: 20%;
+    right: 5%;
+}
+.main-title-new{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #DBB969;
+    text-align: center;
+}
