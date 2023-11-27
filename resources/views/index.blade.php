@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    @extends('layouts.navbar')
+    <x-header></x-header>
     <div class="container">
         <h1 class="main-text">DOMOVOY</h1>
         <h1 class="main-second-text">Объявления об продаже и аренде недвижимости</h1>
@@ -24,17 +24,18 @@
             </div>
             <img class="main-block-big-logo" src="/images/biglogo.svg" alt="biglogo.svg">
         </div>
-        <h1 class="main-title-new">Новые объявления</h1>
+        <h1 class="main-title-new">Последние объявления</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
             <div class="col">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="cstm-card-index">
+                    <a href=""><img src="/images/hom.jpg" alt=""></a>
+                    <a href=""><p>Дом 82 м² на участке 6,3 сот.</p></a>
+                    <a href=""><p class="cstm-card-index-cost">5200000 ₽</p></a>
+                    <a href=""><p>д. Блохино</p></a>
                   </div>
-                </div>
             </div>
         </div>
     </div>
+    <x-footer></x-footer>
 </body>
 </html>

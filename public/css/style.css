@@ -1,22 +1,23 @@
 body{
-    background-color: #011A27;
+    background-color: #f3f3f3;
 }
 nav{
-    background-color: #073146;
+    background-color: #ffffff;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
 }
 .btn-navbar{
     height: 80px;
     width: 80px;
     border: none;
-    background-color: #073146;
+    background-color: white;
     transition: 0.2s ease-in-out;
 }
 .btn-navbar:hover{
-    background-color: #DBB969;
+    background-color: #3db072;
 }
 .btn-navbar:hover path{
     transition: 0.2s ease-in-out;
-    fill: #073146;
+    fill: #ffffff;
 }
 .btn-navbar:focus{
     outline: none;
@@ -27,7 +28,7 @@ nav{
 }
 .btn-auth{
     text-decoration: none;
-    color: #DBB969;
+    color: #3db072;
     font-size: 22px;
     margin-left: 10px;
     transition: 0.2s ease-in-out;
@@ -36,61 +37,63 @@ nav{
     border: none;
 }
 .btn-auth:hover{
-    color: #073146;
+    color: #ffffff;
     border-radius: 100px;
-    background-color: #DBB969;
+    background-color: #3db072;
 }
 .btn-auth:focus{
     outline: none;
 }
 .offcanvas{
-    background-color: #073146;
+    background-color: #ffffff;
 }
 .offcanvas-title{
-    color: #DBB969;
+    color: #3db072;
 }
 .btn-close-cst{
     border: none;
-    background-color: #073146;
+    background-color: rgb(255, 255, 255);
 }
 .btn-close-cst:hover path{
-    stroke: #073146;
+    stroke: #ffffff;
+    transition: 0.2s ease-in-out;
 }
 .btn-close-cst:hover circle{
-    fill: #DBB969;
+    fill: #3db072;
+    transition: 0.2s ease-in-out;
 }
 .nav-link{
-    color: #DBB969;
+    color: #3db072;
     font-size: 20px;
     font-weight: 500;
 }
 .nav-link:hover{
-    color: #b88a1f;
+    color: #3db072;
 }
 .main-text{
     width: 665px;
-    margin-top: 250px;
+    margin-top: 150px;
     margin-left: 80px;
     font-size: 128px;
-    color: #DBB969;
+    color: #3db072;
 }
 .main-second-text{
     font-size: 24px;
     margin-left: 80px;
     text-align: center;
     width: 665px;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
 }
 .main-block-text{
     display: flex;
     width: 100%;
-    background-color: #073146;
+    background-color: #ffffff;
     border-radius: 100px;
     position: relative;
 }
 .main-block-text p{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .main-block-text-desc{
     padding-top: 30px;
@@ -118,6 +121,54 @@ nav{
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 40px;
-    color: #DBB969;
+    color: #000000;
     text-align: center;
+}
+.cstm-card-index{
+    width: 100%;
+    max-height: 250px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.cstm-card-index img{
+    width: 100%;
+    max-height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 3px;
+}
+.cstm-card-index p{
+    margin-bottom: 3px;
+}
+.cstm-card-index-cost{
+    font-weight: 600;
+}
+.cstm-card-index a{
+    text-decoration: none;
+    color: black;
+}
+.header-input{
+    width: 350px;
+    outline: none;
+    border: #3db072 2px solid;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 2px 20px;
+}
+.header-btn{
+    border: none;
+    background-color: #3db072;
+    border-radius: 0px 20px 20px 0px;
+    padding: 2px 15px 2px 10px;
+}
+.find-input-header{
+    display: flex;
+}
+footer{
+    margin-top: 50px;
+    box-shadow: 0px -4px 6px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    background-color: white;
 }

@@ -1,11 +1,17 @@
-<nav class="navbar fixed-top">
+<nav class="navbar">
     <div class="container">
         <button class="btn-navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <svg width="44" height="38" viewBox="0 0 44 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 0.5L44 14V37H38.5V17L22 7L5.5 17V37H0V14L22 0.5Z" fill="#DBB969"/>
-                <path d="M22 16.5L31 22V37.5H25V25.5L22 23.5L19 25.5V37.5H13V22L22 16.5Z" fill="#DBB969"/>
+                <path d="M22 0.5L44 14V37H38.5V17L22 7L5.5 17V37H0V14L22 0.5Z" fill="#3db072"/>
+                <path d="M22 16.5L31 22V37.5H25V25.5L22 23.5L19 25.5V37.5H13V22L22 16.5Z" fill="#3db072"/>
             </svg>
         </button>
+        <form action="">
+            <div class="find-input-header">
+                <input class="header-input" type="text">
+                <button class="header-btn"><img src="/images/search.svg" alt=""></button>
+            </div>
+        </form>
         <div>
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#exampleModal">Регистрация</button>
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#exampleModal">Вход</button>
@@ -15,9 +21,9 @@
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
                 <button type="button" class="btn-close-cst" data-bs-dismiss="offcanvas" aria-label="Close">
                     <svg width="26" height="26" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#073146"/>
-                        <path d="M5 5L13 13" stroke="#DBB969" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M5 13L13 5" stroke="#DBB969" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="9" r="9" fill="#ffffff"/>
+                        <path d="M5 5L13 13" stroke="#3db072" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M5 13L13 5" stroke="#3db072" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </button>
             </div>
