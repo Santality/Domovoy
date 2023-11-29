@@ -13,8 +13,8 @@
             </div>
         </form>
         <div>
-            <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#exampleModal">Регистрация</button>
-            <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#exampleModal">Вход</button>
+            <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#registration">Регистрация</button>
+            <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#login">Вход</button>
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
@@ -28,7 +28,7 @@
                 </button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <ul class="navbar-nav justify-content-end flex-grow-1">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Главная</a>
                     </li>
@@ -38,19 +38,72 @@
                 </ul>
             </div>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <h1 class="modal-title fs-5" id="loginLabel">Войти</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <form>
+                    <div class="mb-3">
+                      <label for="email" class="form-label cstm-label-modal">Почта</label>
+                      <input type="email" class="modal-cstm-input" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label cstm-label-modal">Пароль</label>
+                      <input type="password" class="modal-cstm-input" id="password" name="password">
+                    </div>
+                  </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="submit" class="modal-cstm-btn">Войти</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" id="registration" tabindex="-1" aria-labelledby="registrationLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="registrationLabel">Регистрация</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="lastname" class="form-label cstm-label-modal">Фамилия</label>
+                      <input type="text" class="modal-cstm-input" id="lastname" name="lastname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="firstname" class="form-label cstm-label-modal">Имя</label>
+                      <input type="text" class="modal-cstm-input" id="firstname" name="firstname">
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone" class="form-label cstm-label-modal">Телефон</label>
+                      <input type="text" class="modal-cstm-input" id="phone" name="phone">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label cstm-label-modal">Почта</label>
+                      <input type="email" class="modal-cstm-input" id="email" name="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label cstm-label-modal">Пароль</label>
+                      <input type="password" class="modal-cstm-input" id="password" name="password">
+                    </div>
+                    <div class="mb-3">
+                      <label for="confirmpassword" class="form-label cstm-label-modal">Подтверждение пароля</label>
+                      <input type="password" class="modal-cstm-input" id="confirmpassword">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Согласие с правилами</label>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="modal-cstm-btn">Регистрация</button>
                 </div>
               </div>
             </div>
