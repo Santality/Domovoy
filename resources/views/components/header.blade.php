@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="modal fade" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog auth-modal-mt">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="loginLabel">Войти</h1>
@@ -96,9 +96,11 @@
                       <label for="confirmpassword" class="form-label cstm-label-modal">Подтверждение пароля</label>
                       <input type="password" class="modal-cstm-input" id="confirmpassword">
                     </div>
-                    <div class="mb-3 form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Согласие с правилами</label>
+                    <div class="d-flex justify-content-center">
+                      <div class="form-check">                      
+                        <input type="checkbox" class="form-check-input cstm-checkbox" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Согласие с правилами</label>
+                      </div>
                     </div>
                   </form>
                 </div>

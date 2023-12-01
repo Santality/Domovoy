@@ -28,10 +28,10 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
             <div class="col">
                   <div class="cstm-card-index">
-                    <a href=""><img src="/images/hom.jpg" alt=""></a>
-                    <a href=""><p>Дом 82 м² на участке 6,3 сот.</p></a>
-                    <a href=""><p class="cstm-card-index-cost">5200000 ₽</p></a>
-                    <a href=""><p>д. Блохино</p></a>
+                    <a href="/post"><img src="/images/hom.jpg" alt=""></a>
+                    <a href="/post"><p>Дом 82 м² на участке 6,3 сот.</p></a>
+                    <a href="/post"><p class="cstm-card-index-cost">5200000 ₽</p></a>
+                    <a href="/post"><p>д. Блохино</p></a>
                   </div>
             </div>
         </div>
