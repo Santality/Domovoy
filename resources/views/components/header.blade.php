@@ -6,13 +6,14 @@
                 <path d="M22 16.5L31 22V37.5H25V25.5L22 23.5L19 25.5V37.5H13V22L22 16.5Z" fill="#3db072"/>
             </svg>
         </button>
-        <form action="">
-            <div class="find-input-header">
-                <input class="header-input" type="text">
-                <button class="header-btn"><img src="/images/search.svg" alt=""></button>
-            </div>
-        </form>
-        <div>
+        <div class="d-flex align-items-center">
+            <a href="/profile" class="btn-navbar-profile">
+              <svg width="48" height="48" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="14" cy="14" r="13" stroke="#3DB072" stroke-width="2"/>
+                <ellipse cx="14.1942" cy="21.9552" rx="9.70149" ry="5.04478" fill="#3DB072"/>
+                <circle cx="14.1939" cy="11.8657" r="5.8209" fill="#3DB072"/>
+              </svg>
+            </a>
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#registration">Регистрация</button>
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#login">Вход</button>
         </div>
@@ -33,7 +34,7 @@
                         <a class="nav-link" href="/">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Каталог</a>
+                        <a class="nav-link" href="/catalog">Каталог</a>
                     </li>
                 </ul>
             </div>
