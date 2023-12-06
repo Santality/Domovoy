@@ -500,3 +500,15 @@ footer{
 .post-main-right-about-desc{
     margin-bottom: 5px;
 }
+
+/* catalog */
+
+.catalog-filter-block{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 15px;
+}
+.catalog-filter-block-title{
+    font-size: 20px;
+}
