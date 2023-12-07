@@ -43,10 +43,9 @@
                     <p class="post-main-right-cost-title">Рейтинг:</p>
                     <p class="post-main-right-rating"><img class="me-1" src="/images/star.svg" alt="star.svg">4.8</p>
                     <p class="post-main-right-cost-title">Продавец:</p>
-                    <div class="post-main-right-seller">
-                        <div><img class="me-1" src="/images/profile.svg" alt="profile.svg">Андрей</div>
-                        <p><img class="me-1" src="/images/star.svg" alt="star.svg">4.8</p>
-                    </div>
+                    <a href="" class="post-main-right-seller">
+                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">Андрей
+                    </a>
                     <button class="post-up-button">Позвонить продавцу</button>
                     <div class="d-flex justify-content-between">
                         <button class="post-down-button-left">

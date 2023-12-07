@@ -20,13 +20,7 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
-                <button type="button" class="btn-close-cst" data-bs-dismiss="offcanvas" aria-label="Close">
-                    <svg width="26" height="26" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="9" cy="9" r="9" fill="#ffffff"/>
-                        <path d="M5 5L13 13" stroke="#3db072" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M5 13L13 5" stroke="#3db072" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1">
@@ -35,6 +29,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/catalog">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Создать объявление</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="">Выход</a>
                     </li>
                 </ul>
             </div>
@@ -86,12 +86,12 @@
                       <input type="text" class="modal-cstm-input" id="phone" name="phone">
                     </div>
                     <div class="mb-3">
-                      <label for="email" class="form-label cstm-label-modal">Почта</label>
-                      <input type="email" class="modal-cstm-input" id="email" name="email">
+                      <label for="emailreg" class="form-label cstm-label-modal">Почта</label>
+                      <input type="email" class="modal-cstm-input" id="emailreg" name="email">
                     </div>
                     <div class="mb-3">
-                      <label for="password" class="form-label cstm-label-modal">Пароль</label>
-                      <input type="password" class="modal-cstm-input" id="password" name="password">
+                      <label for="passwordreg" class="form-label cstm-label-modal">Пароль</label>
+                      <input type="password" class="modal-cstm-input" id="passwordreg" name="password">
                     </div>
                     <div class="mb-3">
                       <label for="confirmpassword" class="form-label cstm-label-modal">Подтверждение пароля</label>
@@ -99,8 +99,8 @@
                     </div>
                     <div class="d-flex justify-content-center">
                       <div class="form-check">                      
-                        <input type="checkbox" class="form-check-input cstm-checkbox" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Согласие с правилами</label>
+                        <input type="checkbox" class="form-check-input cstm-checkbox" id="ruleCheck">
+                        <label class="form-check-label" for="ruleCheck">Согласие с правилами</label>
                       </div>
                     </div>
                   </form>

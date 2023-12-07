@@ -86,20 +86,10 @@ nav{
     background-color: #ffffff;
 }
 .offcanvas-title{
-    color: #3db072;
+    color: rgba(0, 0, 0, 0.5);
 }
-.btn-close-cst{
-    border: none;
-    background-color: rgb(255, 255, 255);
-}
-.btn-close-cst path, circle{
-    transition: 0.2s ease-in-out;
-}
-.btn-close-cst:hover path{
-    stroke: #ffffff;
-}
-.btn-close-cst:hover circle{
-    fill: #3db072;
+.btn-close{
+    --bs-btn-close-focus-shadow: 0 0 0 0.25rem rgba(60, 175, 113, 0.31);
 }
 .nav-link{
     color: #3db072;
@@ -273,21 +263,22 @@ footer{
 .modal-cstm-input{
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
+    padding: .1rem .5rem;
     font-size: 1rem;
     font-weight: 400;
-    color: #5F5F5F;
-    border: 2px solid #3DB072;
-    border-radius: 25px;
-    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25) inset;
+    color: #414141;
+    border: 0;
+    border-bottom: 2px solid #3DB072;
     outline: none;
+    transition: 0.2s ease-in-out;
 }
 .modal-cstm-input:focus{
-    border: 2px solid #3DB072;
+    border-color: #005829;
 }
 .cstm-label-modal{
     font-size: 18px;
     color: #5F5F5F;
+    padding: 0 .5rem;
 }
 .modal-footer{
     border: none;
@@ -317,7 +308,7 @@ footer{
     border-color: #3DB072;
 }
 .cstm-checkbox:focus{
-    box-shadow: 0 0 0 0.25rem #3db0737c;;
+    box-shadow: 0 0 0 0.25rem rgba(60, 175, 113, 0.31);
     border-color: #3DB072;
 }
 .auth-modal-mt{
@@ -473,8 +464,11 @@ footer{
     margin-bottom: 0;
 }
 .post-main-right-seller{
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    color: #696969;
+    text-decoration: none;
+    font-weight: 500;
 }
 .post-main-right-seller div{
     display: flex;
@@ -511,4 +505,53 @@ footer{
 }
 .catalog-filter-block-title{
     font-size: 20px;
+}
+
+/* profile */
+
+.profile-bg-block{
+    width: 100%;
+    height: 250px;
+    background-color: white;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 25px;
+}
+.profile-bg-block-inside{
+    height: 100%;
+    width: 100%;
+    background: url(/images/bg-profile.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 0 100px;
+}
+.profile-bg-block-inside img{
+    height: 175px;
+    width: 175px;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 4px solid #3DB072;
+}
+.profile-bg-block-inside p{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+.profile-personal-info{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 10px 25px 20px 25px;
+}
+.profile-post-list{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 10px 25px 20px 25px;
 }
