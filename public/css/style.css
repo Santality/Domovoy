@@ -301,7 +301,7 @@ footer{
     color: white;
 }
 .form-check-label{
-    color: #5F5F5F;
+    color: #212529;
 }
 .cstm-checkbox:checked{
     background-color: #3DB072;
@@ -554,4 +554,50 @@ footer{
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 10px 25px 20px 25px;
+}
+
+/* post_create */
+
+.c-post-left-block, .c-post-right-block{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 10px 25px 20px 25px;
+}
+.c-post-left-block h2, .c-post-right-block h2{
+    font-size: 24px;
+    font-weight: 500;
+}
+.c-post-cstm-input{
+    display: block;
+    width: 100%;
+    padding: .1rem 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+    border: 0;
+    border-bottom: 2px solid #3DB072;
+    outline: none;
+    transition: 0.2s ease-in-out;
+}
+.c-post-cstm-input:focus{
+    border-color: #005829;
+}
+.cstm-label-c-post{
+    font-size: 18px;
+    color: #000000;
+}
+.c-post-cstm-textarea{
+    display: block;
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: 2px solid #3DB072;
+    border-radius: 15px;
+    padding: 5px;
+    transition: 0.2s ease-in-out;
+}
+.c-post-cstm-textarea:focus{
+    border-color: #005829;
 }

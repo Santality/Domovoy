@@ -28,3 +28,7 @@ Route::get('/profile', function () {
 Route::get('/catalog', function () {
     return view('catalog');
 });
+
+Route::get('/post_create', function () {
+    return view('post_create');
+});

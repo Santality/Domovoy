@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/catalog">Каталог</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="">Создать объявление</a>
+                      <a class="nav-link" href="/post_create">Создать объявление</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="">Выход</a>
