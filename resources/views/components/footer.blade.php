@@ -1,6 +1,6 @@
 <footer>
     <div class="container">
-        <img class="footer-logo" src="/images/footer-logo.svg" alt="">
+        <img class="footer-logo" src="/images/footer-logo.svg" alt="footer-logo.svg">
         <div class="footer-up-block">
             <div class="footer-up-left-block">
                 <h2 class="footer-up-text">Связь с нами</h2>
