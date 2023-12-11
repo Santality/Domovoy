@@ -10,6 +10,8 @@ class Estate extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title_estape',
+        'title_estate',
     ];
+
+    public $timestamps = false;
 }

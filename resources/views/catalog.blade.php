@@ -75,14 +75,19 @@
           </div>
           <div class="col-md-9">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
+              @foreach ($catalogList as $list)
               <div class="col">
                     <div class="cstm-card-index">
-                      <a href="/post"><img src="/images/hom.jpg" alt=""></a>
-                      <a href="/post"><p>Дом 82 м² на участке 6,3 сот.</p></a>
-                      <a href="/post"><p class="cstm-card-index-cost">5200000 ₽</p></a>
-                      <a href="/post"><p>д. Блохино</p></a>
+                      <a href="/post">@foreach ($list->photo as $photo)
+                        <img src="/storage/img/{{$photo->title_photo}}" alt="">
+                        @break
+                        @endforeach
+                        </a>
+                      <a href="/post"><p class="cstm-card-index-title">{{$list->title}}</p></a>
+                      <a href="/post"><p class="cstm-card-index-cost">{{$list->cost}} ₽</p></a>
                     </div>
               </div>
+              @endforeach
             </div>
           </div>
         </div>

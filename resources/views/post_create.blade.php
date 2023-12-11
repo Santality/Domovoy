@@ -13,7 +13,8 @@
     <x-header></x-header>
     <div class="container">
         <h2 class="mt-3 mb-3">Новое объявление</h2>
-        <form action="">
+        <form action="/create_post" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="row">
             <div class="col-md-4 mb-3">
                 <div class="c-post-left-block">
@@ -21,35 +22,34 @@
                     <div class="row mb-2">
                         <div class="col-4"><p>Тип сделки</p></div>
                         <div class="col-8">
+                            @foreach ($types as $type)
                             <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-sell" required name="type">
-                                <label class="form-check-label" for="c-sell">Продажа</label>
+                                <input value="{{ $type->id }}" type="radio" class="form-check-input cstm-checkbox" id="type{{ $type->id }}" required name="type">
+                                <label class="form-check-label" for="type{{ $type->id }}">{{ $type->title_type }}</label>
                             </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4"><p>Объект</p></div>
+                        <div class="col-8">
+                            @foreach ($estates as $estate)
                             <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-rent" name="type">
-                                <label class="form-check-label" for="c-rent">Аренда</label>
+                                <input value="{{ $estate->id }}" type="radio" class="form-check-input cstm-checkbox" id="estates{{ $estate->id }}" required name="estate">
+                                <label class="form-check-label" for="estates{{ $estate->id }}">{{ $estate->title_estate }}</label>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4"><p>Объект</p></div>
+                        <div class="col-4"><p>Количество комнат</p></div>
                         <div class="col-8">
+                            @foreach ($rooms as $room)
                             <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-home" required name="object">
-                                <label class="form-check-label" for="c-home">Дом</label>
+                                <input value="{{ $room->id }}" type="radio" class="form-check-input cstm-checkbox" id="rooms{{ $room->id }}" required name="room">
+                                <label class="form-check-label" for="rooms{{ $room->id }}">{{ $room->title_room }}</label>
                             </div>
-                            <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-area" name="object">
-                                <label class="form-check-label" for="c-area">Участок</label>
-                            </div>
-                            <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-flat" name="object">
-                                <label class="form-check-label" for="c-flat">Квартира</label>
-                            </div>
-                            <div class="form-check">                      
-                                <input type="radio" class="form-check-input cstm-checkbox" id="c-room" name="object">
-                                <label class="form-check-label" for="c-room">Комната</label>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="mb-2">
@@ -73,6 +73,10 @@
             <div class="col-md-8 mb-3">
                 <div class="c-post-right-block">
                     <h2>Подробная информация</h2>
+                    <div class="mb-2">
+                        <label for="photo" class="form-label cstm-label-c-post">Фотографии</label>
+                        <input type="file" multiple class="c-post-cstm-input" id="photo" name="photo[]">
+                    </div>
                     <div class="mb-2">
                         <label for="floor" class="form-label cstm-label-c-post">Этаж</label>
                         <input type="text" class="c-post-cstm-input" id="floor" name="floor">

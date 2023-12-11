@@ -25,4 +25,9 @@ class Post extends Model
         'height',
         'status',
     ];
+
+    public function photo()
+    {
+        return $this->hasMany(Photo::class, 'id_post');
+    }
 }

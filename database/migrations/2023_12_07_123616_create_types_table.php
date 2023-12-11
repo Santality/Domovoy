@@ -1,7 +1,9 @@
 <?php
 
+use Database\Seeders\typeSeed;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -17,6 +19,8 @@ return new class extends Migration
             $table->id();
             $table->string('title_type');
         });
+
+        Artisan::call('db:seed', ['--class' => typeSeed::class]);
     }
 
     /**

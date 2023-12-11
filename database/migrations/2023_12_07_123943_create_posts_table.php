@@ -20,12 +20,12 @@ return new class extends Migration
             $table->foreignId('estate')->references('id')->on('estates');
             $table->foreignId('room')->references('id')->on('rooms');
             $table->foreignId('seller')->references('id')->on('users');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('floor')->nullable();
             $table->string('number')->nullable();
             $table->string('cost');
             $table->string('address');
-            $table->string('all_area')->nullable();
+            $table->string('all_area');
             $table->string('living_area')->nullable();
             $table->string('height')->nullable();
             $table->foreignId('status')->references('id')->on('statuses');

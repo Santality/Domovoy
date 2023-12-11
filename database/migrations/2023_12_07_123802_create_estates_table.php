@@ -1,7 +1,9 @@
 <?php
 
+use Database\Seeders\estateSeed;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -15,8 +17,10 @@ return new class extends Migration
     {
         Schema::create('estates', function (Blueprint $table) {
             $table->id();
-            $table->string('title_estape');
+            $table->string('title_estate');
         });
+
+        Artisan::call('db:seed', ['--class' => estateSeed::class]);
     }
 
     /**

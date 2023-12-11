@@ -13,4 +13,10 @@ class Photo extends Model
         'title_photo',
         'id_post',
     ];
+
+    public function post()
+    {
+        return $this->belongsTo(Post::class, 'id_post');
+    }
+    public $timestamps = false;
 }
