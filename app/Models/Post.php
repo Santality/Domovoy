@@ -30,4 +30,9 @@ class Post extends Model
     {
         return $this->hasMany(Photo::class, 'id_post');
     }
+
+    public function estate()
+    {
+        return $this->belongsTo(Estate::class, 'estate');
+    }
 }

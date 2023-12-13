@@ -17,7 +17,7 @@
         <div class="post-main">
             <div class="post-main-left">
                 <div class="post-main-left-slider">
-                    <h2>Дом 82 м² на участке 6,3 сот.</h2>
+                    <h2>{{$details->title}}</h2>
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="/images/hom.jpg" alt=""></div>
@@ -30,18 +30,21 @@
                 </div>
                 <div class="post-main-left-desc">
                     <h2 class="post-main-right-cost-title">Описание</h2>
-                    <p>Пpедлагaeм к пpoдaже шикарный дом в д. Блoхинo !!!! От надежнoго зaстpoйщикa !!! Гoтoвый к пpoживанию!!! ЗАЕЗЖАЙ И ЖИBИ !!!
-                        Прохoдит по !!!Ceльской ипoтeкe!!! Ceмейной ипотeке, Гoсподдeржке!!! Дoм рaсполoжeн в живописнoм мecтe в прeкpасной природнoй зоне, рядoм c домoм лeс, озерo!!!</p>
+                    <p>
+                        @if($details->description)
+                        {{$deatails->description}}
+                        @else
+                        Пустота...
+                        @endif
+                    </p>
                     <h2 class="post-main-right-cost-title">Расположение</h2>
-                    <p>Республика Башкортостан, Иглинский р-н, Акбердинский сельсовет, д. Блохино, Гранитная ул.</p>
+                    <p>{{$details->address}}</p>
                 </div>
             </div>
             <div class="post-main-right">
                 <div class="post-main-right-cost">
                     <p class="post-main-right-cost-title">Цена:</p>
-                    <p class="post-main-right-cost-text">5200000₽</p>
-                    <p class="post-main-right-cost-title">Рейтинг:</p>
-                    <p class="post-main-right-rating"><img class="me-1" src="/images/star.svg" alt="star.svg">4.8</p>
+                    <p class="post-main-right-cost-text">{{$details->cost}} ₽</p>
                     <p class="post-main-right-cost-title">Продавец:</p>
                     <a href="" class="post-main-right-seller">
                         <img class="me-1" src="/images/profile.svg" alt="profile.svg">Андрей
@@ -64,14 +67,27 @@
                 </div>
                 <div class="post-main-right-about">
                     <h2 class="post-main-right-cost-title mb-2">О доме</h2>
-                    <p class="post-main-right-about-desc">Количество комнат: 2</p>
-                    <p class="post-main-right-about-desc">Площадь дома: 82 м²</p>
-                    <p class="post-main-right-about-desc">Площадь участка: 6.3 сот.</p>
-                    <p class="post-main-right-about-desc">Этажей в доме: 1</p>
-                    <p class="post-main-right-about-desc">Материал стен: кирпич</p>
-                    <p class="post-main-right-about-desc">Коммуникации: отопление</p>
-                    <p class="post-main-right-about-desc">Ремонт: косметический</p>
-                    <p class="post-main-right-about-desc">Площадь дома: 82 м²</p>
+                    <p class="post-main-right-about-desc">Тип объекта: 
+                        @if($estateData->title_estate)
+                        +
+                        @else-@endif
+                    </p>
+                    <p class="post-main-right-about-desc">Количество комнат: 
+                        @if($details->description)
+                        @else-@endif
+                    </p>
+                    <p class="post-main-right-about-desc">Общая площадь: 
+                        @if($details->description)
+                        @else-@endif
+                    </p>
+                    <p class="post-main-right-about-desc">Жилая площадь: 
+                        @if($details->description)
+                        @else-@endif
+                    </p>
+                    <p class="post-main-right-about-desc">Высота потолков: 
+                        @if($details->description)
+                        @else-@endif
+                    </p>
                 </div>
             </div>
         </div>

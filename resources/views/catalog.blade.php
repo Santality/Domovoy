@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,18 +77,22 @@
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
               @foreach ($catalogList as $list)
               <div class="col">
-                    <div class="cstm-card-index">
-                      <a href="/post">@foreach ($list->photo as $photo)
-                        <img src="/storage/img/{{$photo->title_photo}}" alt="">
+                    <div class="cstm-card-index catalog-card-cstm">
+                      <a href="/post">@forelse ($list->photo as $photo)
+                        <img src="/storage/img/{{$photo->title_photo}}" alt="{{$photo->title_photo}}">
                         @break
-                        @endforeach
+                        @empty
+                        <img src="/images/default_post_photo.jpg" alt="default_post_photo.jpg">
+                        @endforelse
                         </a>
                       <a href="/post"><p class="cstm-card-index-title">{{$list->title}}</p></a>
                       <a href="/post"><p class="cstm-card-index-cost">{{$list->cost}} ₽</p></a>
+                      <a href="/post"><p class="cstm-card-index-address">{{$list->address}}</p></a>
                     </div>
               </div>
               @endforeach
             </div>
+            {{ $catalogList->withQueryString()->links('pagination::bootstrap-5') }}
           </div>
         </div>
     </div>

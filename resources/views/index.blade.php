@@ -26,15 +26,27 @@
         </div>
         <h1 class="main-title-new">Последние объявления</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
-            <div class="col">
-                  <div class="cstm-card-index">
-                    <a href="/post"><img src="/images/hom.jpg" alt=""></a>
-                    <a href="/post"><p>Дом 82 м² на участке 6,3 сот.</p></a>
-                    <a href="/post"><p class="cstm-card-index-cost">5200000 ₽</p></a>
-                    <a href="/post"><p>д. Блохино</p></a>
-                  </div>
-            </div>
+            @forelse ($posts as $post)
+                <div class="col">
+                    <div class="cstm-card-index">
+                        <a href="/post/{{$post->id}}">
+                            @forelse($post->photo as $photo)
+                            <img src="/storage/img/{{$photo->title_photo}}" alt="{{$photo->title_photo}}">
+                            @break
+                            @empty
+                            <img src="/images/default_post_photo.jpg" alt="default_post_photo.jpg">
+                            @endforelse
+                        </a>
+                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-title">{{$post->title}}<p></a>
+                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-cost">{{$post->cost}} ₽</p></a>
+                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-address">{{$post->address}}</p></a>
+                    </div>
+                </div>
+            @empty
+                <h2>Тут ничего нет</h2>
+            @endforelse
         </div>
+        {{ $posts->withQueryString()->links('pagination::bootstrap-5') }}
     </div>
     <x-footer></x-footer>
 </body>

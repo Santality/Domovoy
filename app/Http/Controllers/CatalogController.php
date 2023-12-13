@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CatalogController extends Controller
 {
     public function catalogList(){
-        $list = Post::with('photo')->get();
+        $list = Post::with('photo')->paginate(20);
         return view('catalog', ['catalogList' => $list]);
     }
 }

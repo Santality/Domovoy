@@ -13,5 +13,10 @@ class Estate extends Model
         'title_estate',
     ];
 
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'estate');
+    }
+
     public $timestamps = false;
 }
