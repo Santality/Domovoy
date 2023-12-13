@@ -13,9 +13,7 @@ class PostController extends Controller
     }
 
     public function detailPost($id){
-        $details = Post::with('photo','estate')->find($id);
-        $estateData = $details->estate->title_estate;
-        dd($estateData);
-        return view('post', ['details' => $details, 'estateData' => $estateData]);
+        $details = Post::with('photo', 'estate', 'seller')->find($id);
+        return view('post', ['details' => $details]);
     }
 }

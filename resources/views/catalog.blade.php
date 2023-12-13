@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Каталог</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -17,57 +18,57 @@
           <div class="col-md-3 mb-3">
               <div class="catalog-filter-block">
                   <h2 class="catalog-filter-block-title">Тип</h2>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterBuy">
                     <label class="form-check-label" for="filterBuy">Купить</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRent">
                     <label class="form-check-label" for="filterRent">Снять</label>
                   </div>
                   <h2 class="catalog-filter-block-title">Недвижимость</h2>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterHome">
                     <label class="form-check-label" for="filterHome">Дом</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterSpot">
                     <label class="form-check-label" for="filterSpot">Участок</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterFlat">
                     <label class="form-check-label" for="filterFlat">Квартира</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom">
                     <label class="form-check-label" for="filterRoom">Комната</label>
                   </div>
                   <h2 class="catalog-filter-block-title">Количество комнат</h2>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom1">
                     <label class="form-check-label" for="filterRoom1">1 комната</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom2">
                     <label class="form-check-label" for="filterRoom2">2 комнаты</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom3">
                     <label class="form-check-label" for="filterRoom3">3 комнаты</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom4">
                     <label class="form-check-label" for="filterRoom4">4 комнаты</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoom5+">
                     <label class="form-check-label" for="filterRoom5+">5 комнат и больше</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterRoomFree">
                     <label class="form-check-label" for="filterRoomFree">Свободная планировка</label>
                   </div>
-                  <div class="form-check">                      
+                  <div class="form-check">
                     <input type="checkbox" class="form-check-input cstm-checkbox" id="filterApartment">
                     <label class="form-check-label" for="filterApartment">Студия</label>
                   </div>

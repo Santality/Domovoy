@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Создание объявления</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -23,7 +24,7 @@
                         <div class="col-4"><p>Тип сделки</p></div>
                         <div class="col-8">
                             @foreach ($types as $type)
-                            <div class="form-check">                      
+                            <div class="form-check">
                                 <input value="{{ $type->id }}" type="radio" class="form-check-input cstm-checkbox" id="type{{ $type->id }}" required name="type">
                                 <label class="form-check-label" for="type{{ $type->id }}">{{ $type->title_type }}</label>
                             </div>
@@ -34,7 +35,7 @@
                         <div class="col-4"><p>Объект</p></div>
                         <div class="col-8">
                             @foreach ($estates as $estate)
-                            <div class="form-check">                      
+                            <div class="form-check">
                                 <input value="{{ $estate->id }}" type="radio" class="form-check-input cstm-checkbox" id="estates{{ $estate->id }}" required name="estate">
                                 <label class="form-check-label" for="estates{{ $estate->id }}">{{ $estate->title_estate }}</label>
                             </div>
@@ -45,7 +46,7 @@
                         <div class="col-4"><p>Количество комнат</p></div>
                         <div class="col-8">
                             @foreach ($rooms as $room)
-                            <div class="form-check">                      
+                            <div class="form-check">
                                 <input value="{{ $room->id }}" type="radio" class="form-check-input cstm-checkbox" id="rooms{{ $room->id }}" required name="room">
                                 <label class="form-check-label" for="rooms{{ $room->id }}">{{ $room->title_room }}</label>
                             </div>
@@ -55,7 +56,7 @@
                     <div class="mb-2">
                         <label for="title" class="form-label cstm-label-c-post">Название</label>
                         <input type="text" required class="c-post-cstm-input" id="title" name="title">
-                    </div>      
+                    </div>
                     <div class="mb-2">
                         <label for="cost" class="form-label cstm-label-c-post">Цена</label>
                         <input type="text" required class="c-post-cstm-input" id="cost" name="cost">
@@ -99,7 +100,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit">s</button>     
+            <button type="submit">s</button>
         </div>
         </form>
     </div>

@@ -33,6 +33,11 @@ class Post extends Model
 
     public function estate()
     {
-        return $this->belongsTo(Estate::class, 'estate');
+        return $this->belongsTo(Estate::class);
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo(User::class, 'seller');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -33,3 +34,9 @@ Route::get('/catalog', [CatalogController::class, 'catalogList']);
 Route::get('/post_create', [ApplicationController::class, 'pagePostCreate']);
 
 Route::post('/create_post', [ApplicationController::class, 'createPost']);
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::post('/logout', [AuthController::class, 'logout']);

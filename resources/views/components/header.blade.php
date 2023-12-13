@@ -7,6 +7,7 @@
             </svg>
         </button>
         <div class="d-flex align-items-center">
+            @auth
             <a href="/profile" class="btn-navbar-profile">
               <svg width="48" height="48" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="14" cy="14" r="13" stroke="#3DB072" stroke-width="2"/>
@@ -14,8 +15,11 @@
                 <circle cx="14.1939" cy="11.8657" r="5.8209" fill="#3DB072"/>
               </svg>
             </a>
+            @endauth
+            @guest
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#registration">Регистрация</button>
             <button type="button" class="btn-auth" data-bs-toggle="modal" data-bs-target="#login">Вход</button>
+            @endguest
         </div>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
@@ -34,7 +38,7 @@
                       <a class="nav-link" href="/post_create">Создать объявление</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="">Выход</a>
+                      <a class="nav-link" href="/logout">Выход</a>
                     </li>
                 </ul>
             </div>
@@ -47,19 +51,20 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="form_auth" action="/login" method="POST">
+                    @csrf
                     <div class="mb-3">
-                      <label for="email" class="form-label cstm-label-modal">Почта</label>
-                      <input type="email" class="modal-cstm-input" id="email" name="email">
+                      <label for="email_log" class="form-label cstm-label-modal">Почта</label>
+                      <input type="email" class="modal-cstm-input" id="email_log" name="email">
                     </div>
                     <div class="mb-3">
-                      <label for="password" class="form-label cstm-label-modal">Пароль</label>
-                      <input type="password" class="modal-cstm-input" id="password" name="password">
+                      <label for="password_log" class="form-label cstm-label-modal">Пароль</label>
+                      <input type="password" class="modal-cstm-input" id="password_log" name="password">
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="modal-cstm-btn">Войти</button>
+                  <button type="submit" form="form_auth" class="modal-cstm-btn">Войти</button>
                 </div>
               </div>
             </div>
@@ -72,41 +77,60 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form id="form_reg" action="/register" method="POST">
+                    @csrf
                     <div class="mb-3">
                       <label for="lastname" class="form-label cstm-label-modal">Фамилия</label>
                       <input type="text" class="modal-cstm-input" id="lastname" name="lastname">
+                        @error('lastname')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                       <label for="firstname" class="form-label cstm-label-modal">Имя</label>
                       <input type="text" class="modal-cstm-input" id="firstname" name="firstname">
+                        @error('firstname')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                       <label for="phone" class="form-label cstm-label-modal">Телефон</label>
                       <input type="text" class="modal-cstm-input" id="phone" name="phone">
+                      @error('phone')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="emailreg" class="form-label cstm-label-modal">Почта</label>
-                      <input type="email" class="modal-cstm-input" id="emailreg" name="email">
+                      <label for="email_reg" class="form-label cstm-label-modal">Почта</label>
+                      <input type="email" class="modal-cstm-input" id="email_reg" name="email">
+                      @error('email')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="passwordreg" class="form-label cstm-label-modal">Пароль</label>
-                      <input type="password" class="modal-cstm-input" id="passwordreg" name="password">
+                      <label for="password_reg" class="form-label cstm-label-modal">Пароль</label>
+                      <input type="password" class="modal-cstm-input" id="password_reg" name="password">
+                      @error('password"')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="mb-3">
-                      <label for="confirmpassword" class="form-label cstm-label-modal">Подтверждение пароля</label>
-                      <input type="password" class="modal-cstm-input" id="confirmpassword">
+                      <label for="confirm_password" class="form-label cstm-label-modal">Подтверждение пароля</label>
+                      <input type="password" class="modal-cstm-input" id="confirm_password" name="confirm_password">
+                      @error('confirm_password')
+                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        @enderror
                     </div>
                     <div class="d-flex justify-content-center">
-                      <div class="form-check">                      
-                        <input type="checkbox" class="form-check-input cstm-checkbox" id="ruleCheck">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input cstm-checkbox" id="ruleCheck" required>
                         <label class="form-check-label" for="ruleCheck">Согласие с правилами</label>
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="modal-cstm-btn">Регистрация</button>
+                  <button type="submit" form="form_reg" class="modal-cstm-btn">Регистрация</button>
                 </div>
               </div>
             </div>

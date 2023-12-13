@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Объявление</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -47,14 +48,14 @@
                     <p class="post-main-right-cost-text">{{$details->cost}} ₽</p>
                     <p class="post-main-right-cost-title">Продавец:</p>
                     <a href="" class="post-main-right-seller">
-                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">Андрей
+                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">
                     </a>
                     <button class="post-up-button">Позвонить продавцу</button>
                     <div class="d-flex justify-content-between">
                         <button class="post-down-button-left">
                             <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.45398C10.8007 1.84004 7.12572 1.03223 4.37017 3.4258C1.61461 5.81938 1.22666 9.82129 3.39062 12.6522C5.18981 15.0059 10.6348 19.97 12.4193 21.5768C12.6189 21.7565 12.7188 21.8464 12.8353 21.8817C12.9368 21.9125 13.048 21.9125 13.1497 21.8817C13.2662 21.8464 13.3659 21.7565 13.5657 21.5768C15.3502 19.97 20.7951 15.0059 22.5943 12.6522C24.7583 9.82129 24.4177 5.7942 21.6147 3.4258C18.8118 1.0574 15.1993 1.84004 13 4.45398Z" stroke="#3DB072" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>    
+                            </svg>
                             В избранное
                         </button>
                         <button class="post-down-button-right">
@@ -67,26 +68,15 @@
                 </div>
                 <div class="post-main-right-about">
                     <h2 class="post-main-right-cost-title mb-2">О доме</h2>
-                    <p class="post-main-right-about-desc">Тип объекта: 
-                        @if($estateData->title_estate)
-                        +
-                        @else-@endif
+                    <p class="post-main-right-about-desc">Тип объекта:
                     </p>
-                    <p class="post-main-right-about-desc">Количество комнат: 
-                        @if($details->description)
-                        @else-@endif
+                    <p class="post-main-right-about-desc">Количество комнат:
                     </p>
-                    <p class="post-main-right-about-desc">Общая площадь: 
-                        @if($details->description)
-                        @else-@endif
+                    <p class="post-main-right-about-desc">Общая площадь:
                     </p>
-                    <p class="post-main-right-about-desc">Жилая площадь: 
-                        @if($details->description)
-                        @else-@endif
+                    <p class="post-main-right-about-desc">Жилая площадь:
                     </p>
-                    <p class="post-main-right-about-desc">Высота потолков: 
-                        @if($details->description)
-                        @else-@endif
+                    <p class="post-main-right-about-desc">Высота потолков:
                     </p>
                 </div>
             </div>
