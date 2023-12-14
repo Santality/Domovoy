@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('password');
+            $table->foreignId('role')->references('id')->on('roles');
             $table->timestamps();
         });
 

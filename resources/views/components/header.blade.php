@@ -34,12 +34,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/catalog">Каталог</a>
                     </li>
+                    @auth
                     <li class="nav-item">
                       <a class="nav-link" href="/post_create">Создать объявление</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/logout">Выход</a>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -83,7 +85,12 @@
                       <label for="lastname" class="form-label cstm-label-modal">Фамилия</label>
                       <input type="text" class="modal-cstm-input" id="lastname" name="lastname">
                         @error('lastname')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="mb-3">
