@@ -21,8 +21,11 @@
                     <h2>{{$details->title}}</h2>
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/images/hom.jpg" alt=""></div>
-                            <div class="swiper-slide"><img src="/images/hom.jpg" alt=""></div>
+                            @forelse ($details->photo as $photo)
+                            <div class="swiper-slide"><img src="/storage/img/{{$photo->title_photo}}" alt="{{$photo->title_photo}}"></div>
+                            @empty
+                            <div class="swiper-slide"><img src="/images/default_post_photo.jpg" alt="default.jpg"></div>
+                            @endforelse
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -48,9 +51,16 @@
                     <p class="post-main-right-cost-text">{{$details->cost}} ₽</p>
                     <p class="post-main-right-cost-title">Продавец:</p>
                     <a href="" class="post-main-right-seller">
-                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">
+                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">{{$details->seller_firstname}}
                     </a>
-                    <button class="post-up-button">Позвонить продавцу</button>
+                    <div class="dropdown">
+                        <button class="post-up-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Позвонить продавцу
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li>Номер телефона: {{$details->seller_phone}}</li>
+                        </ul>
+                    </div>
                     <div class="d-flex justify-content-between">
                         <button class="post-down-button-left">
                             <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,6 +79,7 @@
                 <div class="post-main-right-about">
                     <h2 class="post-main-right-cost-title mb-2">О доме</h2>
                     <p class="post-main-right-about-desc">Тип объекта:
+                        {{$details->estate}}
                     </p>
                     <p class="post-main-right-about-desc">Количество комнат:
                     </p>

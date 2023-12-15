@@ -18,12 +18,11 @@ class CheckRole
     {
         if (auth()->check()){
             $user = auth()->user();
-            dd($user);
             if($user->role()->where('title_role', '=', $role)->exists()){
                 return $next($request);
             }
         }
 
-        return redirect('/');
+        abort('403', 'У вас недостаточно прав');
     }
 }

@@ -22,31 +22,25 @@ Route::get('/', [PostController::class, 'index']);
 
 Route::get('/post/{id}', [PostController::class, 'detailPost']);
 
-Route::get('/catalog', [CatalogController::class, 'catalogList']);
-
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::get('/post_create', [ApplicationController::class, 'pagePostCreate']);
-
-Route::post('/create_post', [ApplicationController::class, 'createPost']);
-
-Route::get('/profile', function () {
-    return view('profile');
-});
-
 Route::post('/profile/update', [UserController::class, 'userUpdate']);
 
-
-
+Route::get('/catalog', [CatalogController::class, 'catalogList']);
 
 Route::middleware('checkRole:Пользователь')->group(function (){
+
+    Route::get('/profile', [UserController::class, 'myPosts']);
+
+    Route::get('/post_create', [ApplicationController::class, 'pagePostCreate']);
+
+    Route::post('/create_post', [ApplicationController::class, 'createPost']);
 
 });
 
 Route::middleware('checkRole:Администратор')->group(function (){
-
 });

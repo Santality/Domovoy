@@ -393,6 +393,7 @@ footer{
     border-radius: 15px;
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 20px;
 }
 .post-main-right-cost{
@@ -509,6 +510,12 @@ footer{
 }
 .post-main-right-about-desc{
     margin-bottom: 5px;
+}
+.dropdown-menu{
+    width: 100%;
+    text-align: center;
+    border-color: #3DB072;
+    font-size: 18px;
 }
 
 /* catalog */
@@ -681,6 +688,15 @@ footer{
     }
     .main-block-text-desc{
         width: 50%;
+    }
+    .post-main{
+        display: grid;
+    }
+    .post-main-left{
+        width: 100%;
+    }
+    .post-main-right{
+        width: 100%;
     }
 }
 @media (max-width: 992px) {

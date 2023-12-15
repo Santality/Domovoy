@@ -98,9 +98,9 @@
             </div>
         </div>
         </form>
-        <h2>Объявления</h2>
+        <h2>Мои объявления</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
-            {{-- @forelse ($userPosts as $post)
+            @forelse ($userPosts as $post)
                 <div class="col">
                     <div class="cstm-card-index">
                         <a href="/post/{{$post->id}}">
@@ -118,8 +118,9 @@
                 </div>
             @empty
                 <h2>Тут ничего нет</h2>
-            @endforelse --}}
+            @endforelse
         </div>
+        {{ $userPosts->withQueryString()->links('pagination::bootstrap-5') }}
     </div>
     <x-footer></x-footer>
     <script>

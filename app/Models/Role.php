@@ -13,5 +13,10 @@ class Role extends Model
         'title_role',
     ];
 
+    public function user()
+    {
+        return $this->hasMany(User::class, 'role');
+    }
+
     public $timestamps = false;
 }

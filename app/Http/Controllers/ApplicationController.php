@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Room;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ApplicationController extends Controller
 {
@@ -18,7 +19,7 @@ class ApplicationController extends Controller
             'type' => $newPost['type'],
             'estate' => $newPost['estate'],
             'room' => $newPost['room'],
-            'seller' => 1,
+            'seller' => Auth::user()->id,
             'description' => $newPost['description'],
             'floor' => $newPost['floor'],
             'number' => $newPost['number'],

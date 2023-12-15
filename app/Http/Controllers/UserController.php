@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,5 +44,10 @@ class UserController extends Controller
         $updateInfo->save();
 
         return redirect('/profile')->with('succes', 'Успешная регистрация');
+    }
+
+    public function myPosts(){
+        $postList = Post::where('seller', '=', Auth::user()->id)->paginate(10);
+        return view('profile', ['userPosts' => $postList]);
     }
 }
