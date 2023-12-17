@@ -401,7 +401,7 @@ footer{
     width: 100%;
     border-radius: 15px;
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
-    padding: 20px;
+    padding: 10px 20px;
 }
 .post-main-right-cost-title{
     margin: 0;
@@ -415,7 +415,7 @@ footer{
     width: 100%;
     border-radius: 15px;
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
-    padding: 20px;
+    padding: 10px 20px;
 }
 .post-up-button{
     width: 100%;
@@ -436,7 +436,7 @@ footer{
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
 }
 .post-down-button-left, .post-down-button-right{
-    width: 49%;
+    width: 100%;
     color: #3DB072;
     border: none;
     outline: none;
@@ -529,12 +529,31 @@ footer{
 .catalog-filter-block-title{
     font-size: 20px;
 }
+.filter-btn-cstm{
+    display: block;
+    border: none;
+    transition: 0.2s ease-in-out;
+    background: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px 0;
+    margin-top: 10px;
+}
+.filter-btn-cstm:hover{
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    color: white;
+    background-color: #3DB072;
+}
 
 /* profile */
 
 .profile-bg-block{
     width: 100%;
-    height: 250px;
+    height: 300px;
     background-color: white;
     box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
@@ -547,8 +566,8 @@ footer{
     background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;
     border-radius: 15px;
-    padding: 0 100px;
 }
 .profile-bg-block-inside img{
     height: 175px;
@@ -601,6 +620,67 @@ footer{
     cursor: pointer;
     border-bottom: #3DB072 2px solid;
 }
+.profile-title-posts{
+    width: 100%;
+    font-size: 20px;
+}
+.cstm-card-profile{
+    width: 100%;
+    height: 360px;
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    position: relative;
+}
+.cstm-card-profile img{
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 3px;
+}
+.cstm-card-profile p{
+    margin-bottom: 3px;
+}
+.cstm-card-profile a{
+    text-decoration: none;
+    color: black;
+}
+.links-block-profile{
+    width: calc(100% - 30px);
+    position: absolute;
+    bottom: 5px;
+}
+.edit-href-profile, .delete-href-profile{
+    display: block;
+    border: none;
+    transition: 0.2s ease-in-out;
+    background: none;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 3px 0;
+}
+.edit-href-profile{
+    color: #3DB072 !important;
+}
+.delete-href-profile{
+    color: #b03d3d !important;
+}
+.edit-href-profile:hover{
+    background-color: #3DB072;
+}
+.delete-href-profile:hover{
+    background-color: #b03d3d;
+}
+.edit-href-profile:hover, .delete-href-profile:hover{
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+    color: white !important;
+}
 
 /* post_create */
 
@@ -647,6 +727,33 @@ footer{
 .c-post-cstm-textarea:focus{
     border-color: #005829;
 }
+.post-create-add-post{
+    color: #3DB072;
+    outline: none;
+    background: none;
+    transition: 0.2s ease-in-out;
+    border-radius: 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    padding: 5px 20px;
+    border: 2px solid #3DB072;
+    font-weight: 500;
+}
+.post-create-add-post:hover {
+    color: white;
+    background-color: #3DB072;
+    box-shadow: 0px 5px 6px 0px rgba(0, 0, 0, 0.25);
+}
+.input_file {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.status-post-page{
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+}
 
 /* pagination */
 
@@ -673,7 +780,6 @@ footer{
     color: white;
 }
 
-
 @media (max-width: 1200px) {
     .main-text{
         width: 100%;
@@ -690,7 +796,7 @@ footer{
         width: 50%;
     }
     .post-main{
-        display: grid;
+        display: block;
     }
     .post-main-left{
         width: 100%;

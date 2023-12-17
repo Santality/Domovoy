@@ -32,15 +32,32 @@ Route::post('/profile/update', [UserController::class, 'userUpdate']);
 
 Route::get('/catalog', [CatalogController::class, 'catalogList']);
 
+Route::post('/catalog/filter', [CatalogController::class, 'catalogFilter']);
+
 Route::middleware('checkRole:Пользователь')->group(function (){
 
     Route::get('/profile', [UserController::class, 'myPosts']);
 
     Route::get('/post_create', [ApplicationController::class, 'pagePostCreate']);
 
+    Route::get('/post_delete/{id}', [UserController::class, 'deletePost']);
+
+    Route::get('/post_edit/{id}', [UserController::class, 'editPost']);
+
+    Route::post('/post_update', [UserController::class, 'updatePost']);
+
+    Route::get('/post_confirm/{id}', [UserController::class, 'confirmPost']);
+
     Route::post('/create_post', [ApplicationController::class, 'createPost']);
+
+    Route::get('/favourits', [UserController::class, 'listFavourites']);
+
+    Route::get('/addFavourits/{id}', [UserController::class, 'addFavourites']);
 
 });
 
 Route::middleware('checkRole:Администратор')->group(function (){
+    Route::get('/admin', function(){
+        return view('admin.admin');
+    });
 });

@@ -44,7 +44,7 @@
                     </div>
                 </div>
             @empty
-                <h2>Тут ничего нет</h2>
+                <h2>Тут ничего нет...</h2>
             @endforelse
         </div>
         {{ $posts->withQueryString()->links('pagination::bootstrap-5') }}

@@ -13,5 +13,10 @@ class Type extends Model
         'title_type',
     ];
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'type' ,'id',);
+    }
+
     public $timestamps = false;
 }

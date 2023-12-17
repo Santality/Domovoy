@@ -27,7 +27,11 @@ class AuthController extends Controller
             "email" => $user['email'],
             "password" => $user['password']
         ])) {
-            return redirect("/")->with("succes", "Успех");
+            if(Auth::user()->role == 1){
+                return redirect('/admin')->with("succes", "Успех");
+            }else{
+                return redirect("/")->with("succes", "Успех");
+            }
         }else{
             return  redirect()->back()->with("error", "Неверный логин или пароль!!!");
         }

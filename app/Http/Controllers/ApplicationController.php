@@ -41,7 +41,7 @@ class ApplicationController extends Controller
                 ]);
             }
         }
-        return redirect('/post_create');
+        return redirect('/profile');
     }
     public function pagePostCreate(){
         $rooms = Room::all();

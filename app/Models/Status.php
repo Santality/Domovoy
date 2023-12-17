@@ -13,5 +13,10 @@ class Status extends Model
         'title_status',
     ];
 
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
     public $timestamps = false;
 }

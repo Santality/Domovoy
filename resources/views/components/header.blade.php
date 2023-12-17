@@ -39,6 +39,9 @@
                       <a class="nav-link" href="/post_create">Создать объявление</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/favourits">Избранное</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="/logout">Выход</a>
                     </li>
                     @endauth

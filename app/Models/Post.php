@@ -26,9 +26,19 @@ class Post extends Model
         'status',
     ];
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class, 'type', 'id');
+    }
+
     public function photo()
     {
         return $this->hasMany(Photo::class, 'id_post');
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class);
     }
 
     public function estate()
@@ -39,5 +49,15 @@ class Post extends Model
     public function seller()
     {
         return $this->belongsTo(User::class, 'seller');
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function favourites()
+    {
+        return $this->belongsToMany(Favourites::class, 'id_post');
     }
 }

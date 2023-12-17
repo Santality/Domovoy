@@ -16,8 +16,8 @@ class statusSeed extends Seeder
     public function run()
     {
         DB::table('statuses')->insert([
-            ['title_status' => 'Открыто'],
-            ['title_status' => 'Закрыто']
+            ['title_status' => 'открыто'],
+            ['title_status' => 'закрыто']
         ]);
     }
 }

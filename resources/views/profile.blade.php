@@ -16,8 +16,10 @@
     <div class="container">
         <div class="profile-bg-block mt-4 mb-3">
             <div class="profile-bg-block-inside">
-                <img id="imagePreview" src="/storage/img/{{Auth::user()->photo}}" alt="profilePhoto.png">
-                <p>{{Auth::user()->lastname}} {{Auth::user()->firstname}}</p>
+                <div class="text-center">
+                    <img id="imagePreview" src="/storage/img/{{Auth::user()->photo}}" alt="profilePhoto.png">
+                    <p>{{Auth::user()->lastname}} {{Auth::user()->firstname}}</p>
+                </div>
             </div>
         </div>
         <form action="/profile/update" method="POST" enctype="multipart/form-data">
@@ -102,7 +104,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3">
             @forelse ($userPosts as $post)
                 <div class="col">
-                    <div class="cstm-card-index">
+                    <div class="cstm-card-profile">
                         <a href="/post/{{$post->id}}">
                             @forelse($post->photo as $photo)
                             <img src="/storage/img/{{$photo->title_photo}}" alt="{{$photo->title_photo}}">
@@ -114,10 +116,17 @@
                         <a href="/post/{{$post->id}}"><p class="cstm-card-index-title">{{$post->title}}<p></a>
                         <a href="/post/{{$post->id}}"><p class="cstm-card-index-cost">{{$post->cost}} ₽</p></a>
                         <a href="/post/{{$post->id}}"><p class="cstm-card-index-address">{{$post->address}}</p></a>
+                        <div class="links-block-profile">
+                            @if ($post->status == 1)
+                            <a class="edit-href-profile" href="/post_confirm/{{$post->id}}">Закрыть объявление</a>
+                            @endif
+                            <a class="edit-href-profile" href="/post_edit/{{$post->id}}">Редактировать</a>
+                            <a class="delete-href-profile" href="/post_delete/{{$post->id}}">Удалить</a>
+                        </div>
                     </div>
                 </div>
             @empty
-                <h2>Тут ничего нет</h2>
+                <h2 class="profile-title-posts">Тут ничего нет...</h2>
             @endforelse
         </div>
         {{ $userPosts->withQueryString()->links('pagination::bootstrap-5') }}
