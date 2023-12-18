@@ -19,6 +19,15 @@
                 <form action="/catalog/filter" method="POST">
                 @csrf
                 <div class="catalog-filter-block">
+                    <h2 class="catalog-filter-block-title">Сортировка</h2>
+                    <div class="form-check">
+                        <input type="radio" name='sort' value="1" class="form-check-input cstm-checkbox" id="filterSortOld">
+                        <label class="form-check-label" for="filterSortOld">По дате (старые)</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" name='sort' value="2" class="form-check-input cstm-checkbox" id="filterSortNew">
+                      <label class="form-check-label" for="filterSortNew">По дате (новые)</label>
+                    </div>
                     <h2 class="catalog-filter-block-title">Тип</h2>
                     @foreach ($types as $type)
                     <div class="form-check">
@@ -29,14 +38,14 @@
                     <h2 class="catalog-filter-block-title">Недвижимость</h2>
                     @foreach ($estates as $estate)
                     <div class="form-check">
-                        <input type="checkbox"  value="{{$estate->id}}" class="form-check-input cstm-checkbox" id="filterEstate{{$estate->id}}">
+                        <input type="checkbox" name='estate[]' value="{{$estate->id}}" class="form-check-input cstm-checkbox" id="filterEstate{{$estate->id}}">
                         <label class="form-check-label" for="filterEstate{{$estate->id}}">{{$estate->title_estate}}</label>
                     </div>
                     @endforeach
                     <h2 class="catalog-filter-block-title">Количество комнат</h2>
                     @foreach ($rooms as $room)
                     <div class="form-check">
-                        <input type="checkbox"  value="{{$room->id}}" class="form-check-input cstm-checkbox" id="filterRoom{{$room->id}}">
+                        <input type="checkbox" name='room[]' value="{{$room->id}}" class="form-check-input cstm-checkbox" id="filterRoom{{$room->id}}">
                         <label class="form-check-label" for="filterRoom{{$room->id}}">{{$room->title_room}}</label>
                     </div>
                     @endforeach

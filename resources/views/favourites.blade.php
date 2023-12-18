@@ -31,7 +31,7 @@
             </div>
             @endforeach
           </div>
-          {{ $catalogList->withQueryString()->links('pagination::bootstrap-5') }}
+          {{ $lists->withQueryString()->links('pagination::bootstrap-5') }}
         </div>
     </div>
     <x-footer></x-footer>

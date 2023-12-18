@@ -780,6 +780,39 @@ footer{
     color: white;
 }
 
+/* admin */
+
+.btn-navbar-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 80px;
+    border: none;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+}
+.btn-navbar-logout svg{
+    width: 44px;
+}
+.btn-navbar-logout:hover{
+    background-color: #3db072;
+}
+.btn-navbar-logout ellipse, .btn-navbar-profile circle{
+    transition: 0.2s ease-in-out;
+}
+.btn-navbar-logout path{
+    transition: 0.2s ease-in-out;
+}
+.btn-navbar-logout:hover path{
+    stroke: white;
+}
+.btn-navbar-logout:focus{
+    outline: none;
+}
+
+/* adaptive*/
+
 @media (max-width: 1200px) {
     .main-text{
         width: 100%;

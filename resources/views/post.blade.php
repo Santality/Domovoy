@@ -53,7 +53,13 @@
                     <h2 style="color: red;" class="status-post-page">Объявление {{$details->title_status}}</h2>
                     @endif
                     <p class="post-main-right-cost-title">Цена:</p>
-                    <p class="post-main-right-cost-text">{{$details->cost}} ₽</p>
+                    <p class="post-main-right-cost-text">
+                        @if ($details->type == 1)
+                        {{$details->cost}} ₽ в месяц
+                        @else
+                        {{$details->cost}} ₽
+                        @endif
+                    </p>
                     <p class="post-main-right-cost-title">Продавец:</p>
                     <a href="" class="post-main-right-seller">
                         <img class="me-1" src="/images/profile.svg" alt="profile.svg">{{$details->seller_firstname}}

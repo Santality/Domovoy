@@ -126,7 +126,7 @@ class UserController extends Controller
 
     public function listFavourites(){
         return redirect('/');
-        // $lists = Favourites::where('id_user', '=', Auth::user()->id)->get();
+        // $lists = Favourites::where('id_user', '=', Auth::user()->id)->paginate(20);
         // return view('favourites', ['lists' => $lists]);
     }
 }
