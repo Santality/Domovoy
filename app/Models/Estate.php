@@ -15,7 +15,7 @@ class Estate extends Model
 
     public function post()
     {
-        return $this->hasMany(Post::class, 'estate');
+        return $this->hasMany(Post::class, 'estate', 'id');
     }
 
     public $timestamps = false;

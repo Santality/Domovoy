@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <img class="footer-logo" src="/images/footer-logo.svg" alt="footer-logo.svg">
         <div class="footer-up-block">

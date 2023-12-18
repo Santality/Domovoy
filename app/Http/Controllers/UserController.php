@@ -16,16 +16,14 @@ class UserController extends Controller
         $request->validate([
             "lastname" => "required",
             "firstname" => "required",
-            "phone" => "required|unique:users|",
-            "email" => "required|unique:users|email",
+            "phone" => "required",
+            "email" => "required|email",
         ], [
                 "lastname.required" => "Поле обязательно для заполнения",
                 "firstname.required" => "Поле обязательно для заполнения",
                 "phone.required" => "Поле обязательно для заполнения",
-                "phone.unique" => "Данный телефон занят",
                 "email.required" => "Поле обязательно для заполнения",
                 "email.email" => "Введите правильный адрес",
-                "email.unique" => "Данный адрес занят",
             ]
         );
 
@@ -66,15 +64,28 @@ class UserController extends Controller
 
     public function updatePost(Request $request){
         $request->validate([
-            "title" => "required",
-            "cost" => "required",
-            "address" => "required",
-            "all_area" => "required",
+            "title" => "required|string",
+            "cost" => "required|numeric",
+            "address" => "required|string",
+            "all_area" => "required|numeric",
+            "floor" => "nullable|numeric",
+            "number" => "nullable|numeric",
+            "living_area" => "nullable|numeric",
+            "height" => "nullable|numeric",
+            "description" => "nullable|string",
         ], [
                 "title.required" => "Поле обязательно для заполнения",
+                "title.string" => "Поле должно быть строкой",
                 "cost.required" => "Поле обязательно для заполнения",
+                "cost.numeric" => "Поле должно содержать только цифры",
                 "address.required" => "Поле обязательно для заполнения",
+                "address.string" => "Поле должно быть строкой",
                 "all_area.required" => "Поле обязательно для заполнения",
+                "floor.numeric" => "Поле должно содержать только цифры",
+                "number.numeric" => "Поле должно содержать только цифры",
+                "living_area.numeric" => "Поле должно содержать только цифры",
+                "height.numeric" => "Поле должно содержать только цифры",
+                "description.string" => "Поле должно быть строкой",
             ]
         );
 
@@ -111,22 +122,9 @@ class UserController extends Controller
         return redirect('/profile');
     }
 
-    public function addFavourites($id){
-        $existingFavourite = Favourites::where('id_user', Auth::user()->id)->where('id_post', $id)->first();
-        if($existingFavourite){
-            return redirect('/favourits');
-        }else{
-            Favourites::create([
-                "id_user" => Auth::user()->id,
-                "id_post" => $id,
-            ]);
-            return redirect('/favourits');
-        }
-    }
-
-    public function listFavourites(){
-        return redirect('/');
-        // $lists = Favourites::where('id_user', '=', Auth::user()->id)->paginate(20);
-        // return view('favourites', ['lists' => $lists]);
+    public function sellerInfo($id){
+        $seller = User::find($id);
+        $userPosts = Post::where('seller', $id)->paginate(10);
+        return view('seller', ['seller' => $seller, 'userPosts' => $userPosts]);
     }
 }

@@ -13,6 +13,32 @@ use Illuminate\Support\Facades\Auth;
 class ApplicationController extends Controller
 {
     public function createPost(Request $request){
+        $request->validate([
+            "title" => "required|string",
+            "cost" => "required|numeric",
+            "address" => "required|string",
+            "all_area" => "required|numeric",
+            "floor" => "nullable|numeric",
+            "number" => "nullable|numeric",
+            "living_area" => "nullable|numeric",
+            "height" => "nullable|numeric",
+            "description" => "nullable|string",
+        ], [
+                "title.required" => "Поле обязательно для заполнения",
+                "title.string" => "Поле должно быть строкой",
+                "cost.required" => "Поле обязательно для заполнения",
+                "cost.numeric" => "Поле должно содержать только цифры",
+                "address.required" => "Поле обязательно для заполнения",
+                "address.string" => "Поле должно быть строкой",
+                "all_area.required" => "Поле обязательно для заполнения",
+                "floor.numeric" => "Поле должно содержать только цифры",
+                "number.numeric" => "Поле должно содержать только цифры",
+                "living_area.numeric" => "Поле должно содержать только цифры",
+                "height.numeric" => "Поле должно содержать только цифры",
+                "description.string" => "Поле должно быть строкой",
+            ]
+        );
+
         $newPost = $request->all();
         $idPost = Post::create([
             'title' => $newPost['title'],

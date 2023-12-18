@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <x-header></x-header>
-    <div class="container">
+    <div class="container main-block">
         <div class="post-main">
             <div class="post-main-left">
                 <div class="post-main-left-slider">
@@ -61,8 +62,8 @@
                         @endif
                     </p>
                     <p class="post-main-right-cost-title">Продавец:</p>
-                    <a href="" class="post-main-right-seller">
-                        <img class="me-1" src="/images/profile.svg" alt="profile.svg">{{$details->seller_firstname}}
+                    <a href="/seller/{{$details->seller}}" class="post-main-right-seller">
+                        <img class="me-1" src="/storage/img/{{$details->seller_image}}" alt="profile.svg">{{$details->seller_firstname}}
                     </a>
                     <div class="dropdown">
                         <button class="post-up-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,16 +73,6 @@
                           <li>Номер телефона: {{$details->seller_phone}}</li>
                         </ul>
                     </div>
-                    @auth
-                    <div class="d-flex justify-content-between">
-                        <a href="/addFavourits/{{$details->id}}" style="text-decoration: none" class="post-down-button-left">
-                            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13 4.45398C10.8007 1.84004 7.12572 1.03223 4.37017 3.4258C1.61461 5.81938 1.22666 9.82129 3.39062 12.6522C5.18981 15.0059 10.6348 19.97 12.4193 21.5768C12.6189 21.7565 12.7188 21.8464 12.8353 21.8817C12.9368 21.9125 13.048 21.9125 13.1497 21.8817C13.2662 21.8464 13.3659 21.7565 13.5657 21.5768C15.3502 19.97 20.7951 15.0059 22.5943 12.6522C24.7583 9.82129 24.4177 5.7942 21.6147 3.4258C18.8118 1.0574 15.1993 1.84004 13 4.45398Z" stroke="#3DB072" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            В избранное
-                        </a>
-                    </div>
-                    @endauth
                 </div>
                 <div class="post-main-right-about">
                     <h2 class="post-main-right-cost-title mb-2">О доме</h2>
@@ -111,6 +102,7 @@
         </div>
     </div>
     <x-footer></x-footer>
+    </div>
     <script>
         var swiper = new Swiper(".mySwiper", {
           cssMode: true,

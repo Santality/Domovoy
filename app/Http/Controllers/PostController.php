@@ -24,6 +24,7 @@ class PostController extends Controller
         $details->title_status = Status::find($details->status)->title_status;
         $details->seller_firstname = User::find($details->seller)->firstname;
         $details->seller_phone = User::find($details->seller)->phone;
+        $details->seller_image = User::find($details->seller)->photo;
         return view('post', ['details' => $details]);
     }
 }

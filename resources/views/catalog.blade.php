@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <x-header></x-header>
-    <div class="container">
+    <div class="container main-block">
         <h2 class="mt-3 mb-3">Каталог</h2>
         <div class="d-flex justify-content-between row row-cols-1 row-cols-md-2">
           <div class="col-md-3 mb-3">
@@ -57,7 +58,7 @@
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
               @foreach ($catalogList as $list)
               <div class="col">
-                    <div class="cstm-card-index catalog-card-cstm">
+                    <div class="cstm-card-index">
                       <a href="/post/{{$list->id}}">@forelse ($list->photo as $photo)
                         <img src="/storage/img/{{$photo->title_photo}}" alt="{{$photo->title_photo}}">
                         @break
@@ -65,9 +66,9 @@
                         <img src="/images/default_post_photo.jpg" alt="default_post_photo.jpg">
                         @endforelse
                         </a>
-                      <a href="/post/{{$list->id}}"><p class="cstm-card-index-title">{{$list->title}}</p></a>
-                      <a href="/post/{{$list->id}}"><p class="cstm-card-index-cost">{{$list->cost}} ₽</p></a>
-                      <a href="/post/{{$list->id}}"><p class="cstm-card-index-address">{{$list->address}}</p></a>
+                      <a class="cstm-card-index-title" href="/post/{{$list->id}}">{{$list->title}}</a>
+                      <a class="cstm-card-index-cost" href="/post/{{$list->id}}">{{$list->cost}} ₽</a>
+                      <a class="cstm-card-index-address" href="/post/{{$list->id}}">{{$list->address}}</a>
                     </div>
               </div>
               @endforeach
@@ -77,5 +78,6 @@
         </div>
     </div>
     <x-footer></x-footer>
+    </div>
 </body>
 </html>

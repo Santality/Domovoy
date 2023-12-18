@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <x-header></x-header>
-    <div class="container">
+    <div class="container main-block">
         <h2 class="mt-3 mb-3">Новое объявление</h2>
         <form action="/create_post" method="POST" enctype="multipart/form-data">
         @csrf
@@ -56,18 +57,50 @@
                     <div class="mb-2">
                         <label for="title" class="form-label cstm-label-c-post">Название</label>
                         <input type="text" required class="c-post-cstm-input" id="title" name="title">
+                        @error('title')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="cost" class="form-label cstm-label-c-post">Цена</label>
                         <input type="text" placeholder="Укажите цену в рублях" required class="c-post-cstm-input" id="cost" name="cost">
+                        @error('cost')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="address" class="form-label cstm-label-c-post">Адрес</label>
                         <input type="text" required class="c-post-cstm-input" id="address" name="address">
+                        @error('address')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="all_area" class="form-label cstm-label-c-post">Общая площадь</label>
                         <input type="text" placeholder="Укажите площадь в м²" required class="c-post-cstm-input" id="all_area" name="all_area">
+                        @error('all_area')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -75,7 +108,7 @@
                 <div class="c-post-right-block">
                     <h2>Подробная информация</h2>
                     <div class="mb-2">
-                        <label class="form-label cstm-label-c-post" for="input_tracks">Фото</label>
+                        <label class="form-label cstm-label-c-post" for="photo">Фото</label>
                         <label for="photo" class="c-post-cstm-input">
                             <input class="input_file" id="photo" name="photo[]" type="file" multiple>
                             <span id="photo-fake">Выберите фото</span>
@@ -84,22 +117,62 @@
                     <div class="mb-2">
                         <label for="floor" class="form-label cstm-label-c-post">Этаж</label>
                         <input type="text" class="c-post-cstm-input" id="floor" name="floor">
+                        @error('floor')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="number" class="form-label cstm-label-c-post">Номер квартиры</label>
                         <input type="text" class="c-post-cstm-input" id="number" name="number">
+                        @error('number')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="living_area" class="form-label cstm-label-c-post">Жилая площадь</label>
                         <input type="text" placeholder="Укажите площадь в м²" class="c-post-cstm-input" id="living_area" name="living_area">
+                        @error('living_area')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="height" class="form-label cstm-label-c-post">Высота потолков</label>
                         <input type="text" placeholder="Укажите высоту в метрах" class="c-post-cstm-input" id="height" name="height">
+                        @error('height')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-2">
                         <label for="description" class="form-label cstm-label-c-post">Описание</label>
                         <textarea maxlength="255" placeholder="Максимум 255 символов" name="description" id="description" class="c-post-cstm-textarea" rows="4"></textarea>
+                        @error('description')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -108,6 +181,7 @@
         </form>
     </div>
     <x-footer></x-footer>
+    </div>
     <script>
         document.getElementById("photo").addEventListener("change", function() {
             var fileInput = this;

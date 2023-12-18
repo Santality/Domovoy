@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CatalogController;
@@ -28,11 +29,11 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/logout', [AuthController::class, 'logout']);
 
-Route::post('/profile/update', [UserController::class, 'userUpdate']);
-
 Route::get('/catalog', [CatalogController::class, 'catalogList']);
 
 Route::post('/catalog/filter', [CatalogController::class, 'catalogFilter']);
+
+Route::get('/seller/{id}', [UserController::class, 'sellerInfo']);
 
 Route::middleware('checkRole:Пользователь')->group(function (){
 
@@ -50,14 +51,16 @@ Route::middleware('checkRole:Пользователь')->group(function (){
 
     Route::post('/create_post', [ApplicationController::class, 'createPost']);
 
-    Route::get('/favourits', [UserController::class, 'listFavourites']);
-
-    Route::get('/addFavourits/{id}', [UserController::class, 'addFavourites']);
+    Route::post('/profile/update', [UserController::class, 'userUpdate']);
 
 });
 
 Route::middleware('checkRole:Администратор')->group(function (){
-    Route::get('/admin', function(){
-        return view('admin.admin');
-    });
+
+    Route::get('/admin', [AdminController::class, 'adminUsers']);
+
+    Route::get('/postList', [AdminController::class, 'adminPosts']);
+
+    Route::get('/postList/delete/{id}', [AdminController::class, 'postDelete']);
+
 });

@@ -11,7 +11,39 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <x-admin-header></x-admin-header>
+    <div class="container main-block mt-4">
+        <div class="admin-users-list">
+            <h2 class="mb-3">Список пользователей сайта</h2>
+            <div class="tables-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Имя</th>
+                    <th>Фамилия</th>
+                    <th>Телефон</th>
+                    <th>Почта</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach ($userList as $users)
+                        <tr>
+                            <td>{{$users->id}}</td>
+                            <td>{{$users->firstname}}</td>
+                            <td>{{$users->lastname}}</td>
+                            <td>{{$users->phone}}</td>
+                            <td>{{$users->email}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            </div>
+            {{ $userList->withQueryString()->links('pagination::bootstrap-5') }}
+        </div>
+    </div>
     <x-footer></x-footer>
+    </div>
 </body>
 </html>

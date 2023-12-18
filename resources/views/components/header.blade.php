@@ -39,9 +39,6 @@
                       <a class="nav-link" href="/post_create">Создать объявление</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/favourits">Избранное</a>
-                    </li>
-                    <li class="nav-item">
                       <a class="nav-link" href="/logout">Выход</a>
                     </li>
                     @endauth
@@ -60,11 +57,27 @@
                     @csrf
                     <div class="mb-3">
                       <label for="email_log" class="form-label cstm-label-modal">Почта</label>
-                      <input type="email" class="modal-cstm-input" id="email_log" name="email">
+                      <input type="email" class="modal-cstm-input" id="email_log" name="email_log">
+                      @error('email_log')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                     <div class="mb-3">
                       <label for="password_log" class="form-label cstm-label-modal">Пароль</label>
-                      <input type="password" class="modal-cstm-input" id="password_log" name="password">
+                      <input type="password" class="modal-cstm-input" id="password_log" name="password_log">
+                      @error('password_log')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
+                        @enderror
                     </div>
                   </form>
                 </div>
@@ -100,35 +113,60 @@
                       <label for="firstname" class="form-label cstm-label-modal">Имя</label>
                       <input type="text" class="modal-cstm-input" id="firstname" name="firstname">
                         @error('firstname')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="mb-3">
                       <label for="phone" class="form-label cstm-label-modal">Телефон</label>
                       <input type="text" class="modal-cstm-input" id="phone" name="phone">
                       @error('phone')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="mb-3">
                       <label for="email_reg" class="form-label cstm-label-modal">Почта</label>
                       <input type="email" class="modal-cstm-input" id="email_reg" name="email">
                       @error('email')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="mb-3">
                       <label for="password_reg" class="form-label cstm-label-modal">Пароль</label>
                       <input type="password" class="modal-cstm-input" id="password_reg" name="password">
-                      @error('password"')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                      @error('password')
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="mb-3">
                       <label for="confirm_password" class="form-label cstm-label-modal">Подтверждение пароля</label>
                       <input type="password" class="modal-cstm-input" id="confirm_password" name="confirm_password">
                       @error('confirm_password')
-                        <div class="alert alert-danger" role="alert">{{$message}}</div>
+                        <div class="alert alert-danger alert-dismissible">
+                            <div class="alert-text">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        </div>
                         @enderror
                     </div>
                     <div class="d-flex justify-content-center">

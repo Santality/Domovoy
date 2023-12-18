@@ -12,8 +12,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="wrapper">
     <x-header></x-header>
-    <div class="container">
+    <div class="container main-block">
         <div class="profile-bg-block mt-4 mb-3">
             <div class="profile-bg-block-inside">
                 <div class="text-center">
@@ -113,9 +114,9 @@
                             <img src="/images/default_post_photo.jpg" alt="default_post_photo.jpg">
                             @endforelse
                         </a>
-                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-title">{{$post->title}}<p></a>
-                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-cost">{{$post->cost}} ₽</p></a>
-                        <a href="/post/{{$post->id}}"><p class="cstm-card-index-address">{{$post->address}}</p></a>
+                        <a class="cstm-card-index-title" href="/post/{{$post->id}}">{{$post->title}}</a>
+                        <a class="cstm-card-index-cost" href="/post/{{$post->id}}">{{$post->cost}} ₽</a>
+                        <a class="cstm-card-index-address" href="/post/{{$post->id}}">{{$post->address}}</a>
                         <div class="links-block-profile">
                             @if ($post->status == 1)
                             <a class="edit-href-profile" href="/post_confirm/{{$post->id}}">Закрыть объявление</a>
@@ -132,6 +133,7 @@
         {{ $userPosts->withQueryString()->links('pagination::bootstrap-5') }}
     </div>
     <x-footer></x-footer>
+    </div>
     <script>
         $(document).ready(function () {
             $("#photoProfile").change(function () {

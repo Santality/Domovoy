@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/admin">Пользователи</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/catalog">Объявления</a>
+                        <a class="nav-link" href="/postList">Объявления</a>
                     </li>
                     @endauth
                 </ul>
