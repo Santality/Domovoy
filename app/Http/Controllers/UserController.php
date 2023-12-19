@@ -18,12 +18,14 @@ class UserController extends Controller
             "firstname" => "required",
             "phone" => "required",
             "email" => "required|email",
+            "password" => "nullable|min:8",
         ], [
                 "lastname.required" => "Поле обязательно для заполнения",
                 "firstname.required" => "Поле обязательно для заполнения",
                 "phone.required" => "Поле обязательно для заполнения",
                 "email.required" => "Поле обязательно для заполнения",
                 "email.email" => "Введите правильный адрес",
+                "password.min" => "Длина пароля должна быть больше 8",
             ]
         );
 

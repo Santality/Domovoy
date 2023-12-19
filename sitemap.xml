@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding ='UTF-8'?>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>https://domovoy.com/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://domovoy.com/catalog</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://domovoy.com/profile</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://domovoy.com/post_create</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://domovoy.com/admin</loc>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://domovoy.com/postList</loc>
+        <priority>0.6</priority>
+    </url>
+</urlset>

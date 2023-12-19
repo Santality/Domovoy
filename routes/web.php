@@ -35,6 +35,10 @@ Route::post('/catalog/filter', [CatalogController::class, 'catalogFilter']);
 
 Route::get('/seller/{id}', [UserController::class, 'sellerInfo']);
 
+Route::get('/sitemap', function(){
+    return view('sitemap');
+});
+
 Route::middleware('checkRole:Пользователь')->group(function (){
 
     Route::get('/profile', [UserController::class, 'myPosts']);
