@@ -14,15 +14,18 @@ class UserController extends Controller
 {
     public function userUpdate(Request $request){
         $request->validate([
-            "lastname" => "required",
-            "firstname" => "required",
-            "phone" => "required",
+            "lastname" => "required|alpha",
+            "firstname" => "required|alpha",
+            "phone" => "required|numeric",
             "email" => "required|email",
             "password" => "nullable|min:8",
         ], [
                 "lastname.required" => "Поле обязательно для заполнения",
+                "lastname.alpha" => "Поле должно содержать только буквы",
                 "firstname.required" => "Поле обязательно для заполнения",
+                "firstname.alpha" => "Поле должно содержать только буквы",
                 "phone.required" => "Поле обязательно для заполнения",
+                "phone.numeric" => "Поле должно содержать только цифры",
                 "email.required" => "Поле обязательно для заполнения",
                 "email.email" => "Введите правильный адрес",
                 "password.min" => "Длина пароля должна быть больше 8",
